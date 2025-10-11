@@ -1,0 +1,23 @@
+name: sbt trace action
+inputs:
+  input-trace-file:
+    default: 'target/traces/build.trace'
+  count:
+    default: 100
+  min-duration:
+    default: 100
+  short-name:
+    default: true
+runs:
+  using: composite
+  steps:
+    - uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8.0.0
+      with:
+        script: |
+          const f = require(`${process.env.GITHUB_ACTION_PATH}/main.js`);
+          const path = "${{ inputs.input-trace-file }}";
+          const count = ${{ inputs.count }};
+          const output = `${process.env.GITHUB_STEP_SUMMARY}`;
+          const min = ${{ inputs.min-duration }};
+          const shortName = ${{ inputs.short-name }};
+          f({ path, count, output, min, shortName });
