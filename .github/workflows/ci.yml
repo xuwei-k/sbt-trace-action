@@ -28,16 +28,16 @@ jobs:
     - uses: actions/setup-java@v5
       with:
         distribution: zulu
-        java-version: 8
+        java-version: 17
     - uses: sbt/setup-sbt@v1
     - run: mkdir project
     - run: |
         case ${{ matrix.sbt }} in
           "1")
-            echo "sbt.version=1.12.0" > project/build.properties
+            echo "sbt.version=1.12.3" > project/build.properties
             ;;
           "2")
-            echo "sbt.version=2.0.0-RC8" > project/build.properties
+            echo "sbt.version=2.0.0-RC9" > project/build.properties
             ;;
           *)
             echo "unknown version"
