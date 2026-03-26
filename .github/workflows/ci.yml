@@ -34,10 +34,10 @@ jobs:
     - run: |
         case ${{ matrix.sbt }} in
           "1")
-            echo "sbt.version=1.12.5" > project/build.properties
+            echo "sbt.version=1.12.8" > project/build.properties
             ;;
           "2")
-            echo "sbt.version=2.0.0-RC9" > project/build.properties
+            echo "sbt.version=2.0.0-RC10" > project/build.properties
             ;;
           *)
             echo "unknown version"
