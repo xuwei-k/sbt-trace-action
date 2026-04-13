@@ -37,7 +37,7 @@ jobs:
             echo "sbt.version=1.12.9" > project/build.properties
             ;;
           "2")
-            echo "sbt.version=2.0.0-RC11" > project/build.properties
+            echo "sbt.version=2.0.0-RC12" > project/build.properties
             ;;
           *)
             echo "unknown version"
